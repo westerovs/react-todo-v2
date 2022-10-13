@@ -11,7 +11,7 @@
 # production
 /build
 
-# misc
+# outher
 .DS_Store
 .env.local
 .env.development.local
@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+desktop.ini
+npm-debug.log
+/dist
+/release
+/.vscode
+/.git
+.idea
+/yarn-error.log
+/package-lock.json
