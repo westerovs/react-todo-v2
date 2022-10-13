@@ -1,6 +1,7 @@
 import React from 'react';
-
 import './todo-list-item.css';
+import basket from '../../assets/icons/basket.svg'
+import access from '../../assets/icons/check-mark.svg'
 
 const TodoListItem = ({ label, important = false }) => {
 
@@ -8,25 +9,22 @@ const TodoListItem = ({ label, important = false }) => {
     color: important ? 'steelblue' : 'black',
     fontWeight: important ? 'bold' : 'normal'
   };
-
+  
   return (
-    <span className="todo-list-item">
-      <span
-        className="todo-list-item-label"
-        style={style}>
-        {label}
-      </span>
-
-      <button type="button"
-              className="btn btn-outline-success btn-sm float-right">
-        <i className="fa fa-exclamation" />
-      </button>
-
-      <button type="button"
-              className="btn btn-outline-danger btn-sm float-right">
-        <i className="fa fa-trash-o" />
-      </button>
-    </span>
+    <li className="todo__list-item">
+      <p className="list__item-header" style={ style }>{ label }</p>
+  
+      <div className="img-cover"></div>
+  
+      <div className="list__item-row">
+        <button type="button" className="">
+          <img width="20" height="20" className="list__item-icon" src={ basket } alt="image"/>
+        </button>
+        <button type="button" className="">
+          <img width="20" height="20" className="list__item-icon" src={ access } alt="image"/>
+        </button>
+      </div>
+    </li>
   );
 };
 

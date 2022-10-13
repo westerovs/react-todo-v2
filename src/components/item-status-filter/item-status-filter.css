@@ -1,0 +1,12 @@
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 5px;
+  padding: 5px 0 10px 0;
+  border-bottom: 1px solid gray;
+}
+
+.filter__btn {
+  padding: 5px;
+  background: gray;
+}

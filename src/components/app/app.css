@@ -1,8 +1,59 @@
-.todo-app {
-  margin: 2rem auto 0 auto;
-  max-width: 400px;
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.top-panel {
-  margin: 1rem 0;
+.page {
+  min-height: 100%;
 }
+
+.page-body {
+  min-height: 100%;
+  font-size: 18px;
+  font-family: CurseCasual, Arial, Helvetica, sans-serif;
+  background-color: black;
+  background-image: linear-gradient(-120deg, black, gray);
+  color: gray;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*безопасное скрытие элемента*/
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.app {
+  margin: 20px auto 0;
+  padding: 20px;
+  width: 450px;
+  border: 2px groove gray;
+  border-radius: 10px;
+}
+
