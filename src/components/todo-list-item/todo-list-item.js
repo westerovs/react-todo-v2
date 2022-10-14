@@ -6,26 +6,36 @@ import access from '../../assets/icons/check-mark.svg'
 export default class TodoListItem extends React.Component {
   
   state = {
-    important: this.props.important
+    important: this.props.important,
+    done: this.props.done,
+  }
+  
+  setLabel = () => {
+    this.setState(({done}) => {
+      return { done: !done }
+    })
   }
   
   setImportant = () => {
-    this.setState({
-      important: !this.state.important
+    this.setState(({important}) => {
+      return {important: !important}
     })
   }
   
   render() {
-    const {label, important = false} = this.props
+    const {label, important, done} = this.props
     
     const style = {
       color: this.state.important ? 'steelblue' : 'black',
-      fontWeight: important ? 'bold' : 'normal'
+      fontWeight: important ? 'bold' : 'normal',
+      textDecoration: this.state.done ? 'line-through 2px': 'none',
     };
   
     return (
       <li className="todo__list-item">
-        <p className="list__item-header" style={ style }>{ label }</p>
+        <p className="list__item-header" style={ style }
+          onClick={ this.setLabel }
+        >{ label }</p>
       
         <div className="img-cover"></div>
       

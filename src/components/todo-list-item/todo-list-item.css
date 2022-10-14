@@ -11,6 +11,7 @@
 
 .list__item-header {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .list__item-icon {
@@ -34,3 +35,4 @@
   flex-direction: row-reverse;
   padding: 5px 24px;
 }
+
