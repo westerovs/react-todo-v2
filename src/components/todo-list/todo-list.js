@@ -3,12 +3,12 @@ import React from 'react'
 import TodoListItem from '../todo-list-item/todo-list-item.js'
 import './todo-list.css'
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ onDeleted, todos }) => {
   const elements = todos.map((item) => {
     const { id, ...itemProps } = item
 
     return (
-        <TodoListItem key={id} {...itemProps } />
+      <TodoListItem onDeleted={() => onDeleted(id)} key={ id } { ...itemProps } />
     )
   })
 

@@ -49,6 +49,7 @@ button {
   overflow: hidden !important;
 }
 
+
 .app {
   margin: 20px auto 0;
   padding: 20px;
@@ -57,3 +58,11 @@ button {
   border-radius: 10px;
 }
 
+.list__item-header--important {
+  color: steelblue;
+  font-weight: bold;
+}
+
+.list__item-header--done {
+  text-decoration: line-through;
+}

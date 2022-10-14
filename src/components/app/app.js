@@ -8,7 +8,7 @@ import ItemStatusFilter from '../item-status-filter/item-status-filter.js'
 import './app.css'
 
 export default class App extends React.Component {
-  onRemove = (id) => {
+  onDeleted = (id) => {
     console.log('remove', id)
   }
   
@@ -25,10 +25,10 @@ export default class App extends React.Component {
       
         <div className="">
           <SearchPanel />
-          <ItemStatusFilter onClick={this.onRemove} />
+          <ItemStatusFilter/>
         </div>
       
-        <TodoList todos={todoData} />
+        <TodoList onDeleted={(id) => console.log('del', id)} todos={todoData} />
       </div>
     )
   }

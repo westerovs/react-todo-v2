@@ -1,5 +1,5 @@
-import React from 'react';
-import './todo-list-item.css';
+import React from 'react'
+import './todo-list-item.css'
 import basket from '../../assets/icons/basket.svg'
 import access from '../../assets/icons/check-mark.svg'
 
@@ -23,19 +23,16 @@ export default class TodoListItem extends React.Component {
   }
   
   render() {
-    const {label, important, done} = this.props
-    
-    const style = {
-      color: this.state.important ? 'steelblue' : 'black',
-      fontWeight: important ? 'bold' : 'normal',
-      textDecoration: this.state.done ? 'line-through 2px': 'none',
-    };
+    const {label, onDeleted} = this.props
+    const {important, done} = this.state
   
+    let classNames = 'list__item-header'
+    if (done) classNames += ' list__item-header--done'
+    if (important) classNames += ' list__item-header--important'
+
     return (
       <li className="todo__list-item">
-        <p className="list__item-header" style={ style }
-          onClick={ this.setLabel }
-        >{ label }</p>
+        <p className={ classNames } onClick={ this.setLabel }>{ label }</p>
       
         <div className="img-cover"></div>
       
@@ -43,12 +40,12 @@ export default class TodoListItem extends React.Component {
           <button type="button" className="" onClick={ this.setImportant }>
             <img width="20" height="20" className="list__item-icon" src={ access } alt="image"/>
           </button>
-          <button type="button" className="">
+          <button type="button" className="" onClick={() => onDeleted()}>
             <img width="20" height="20" className="list__item-icon" src={ basket } alt="image"/>
           </button>
         </div>
       </li>
-    );
+    )
   }
 }
 
