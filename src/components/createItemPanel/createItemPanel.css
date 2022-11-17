@@ -1,0 +1,14 @@
+.todo__create {
+  padding-bottom: 10px;
+}
+
+.todo__create input {
+  padding: 5px;
+}
+
+.todo__create button {
+  padding: 5px;
+  margin-left: 5px;
+  color: green;
+  font-weight: bold;
+}
